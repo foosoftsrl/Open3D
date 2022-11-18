@@ -1,11 +1,14 @@
-target_sources(pybind PRIVATE
-    renderoption.cpp
-    utility.cpp
-    viewcontrol.cpp
-    visualization.cpp
-    visualizer.cpp
-    rendering/material.cpp  # for RPC serialization
-)
+# Dirty hack... trying to remove rendering
+if(BUILD_RENDERING)
+    target_sources(pybind PRIVATE
+       renderoption.cpp
+       utility.cpp
+       viewcontrol.cpp
+       visualization.cpp
+       visualizer.cpp
+       rendering/material.cpp  # for RPC serialization
+    )
+endif()
 
 if (BUILD_GUI)
     target_sources(pybind PRIVATE
