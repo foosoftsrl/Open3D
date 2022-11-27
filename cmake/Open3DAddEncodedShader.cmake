@@ -67,6 +67,8 @@ endfunction()
 
 # Helper target for open3d_add_encoded_shader
 if (NOT TARGET ShaderEncoder)
+    # This will make macos cross-compilation from x86-64 to macos work, as ShaderEncoder should be compiled with host toolchain
+    set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
     add_executable(ShaderEncoder EXCLUDE_FROM_ALL)
     target_sources(ShaderEncoder PRIVATE ${CMAKE_CURRENT_LIST_DIR}/ShaderEncoder.cpp)
     target_compile_features(ShaderEncoder PRIVATE cxx_std_14)
