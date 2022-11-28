@@ -131,4 +131,7 @@ if (BUILD_GUI)
     open3d_add_app(Open3DViewer Open3D Open3DViewer)
 endif()
 
-open3d_add_app_common(OfflineReconstruction OfflineReconstruction OfflineReconstruction)
+if (BUILD_CMDLINE_APPS)
+  open3d_add_app_common(OfflineReconstruction OfflineReconstruction OfflineReconstruction)
+endif()
+
