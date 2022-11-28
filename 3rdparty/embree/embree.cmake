@@ -15,6 +15,14 @@ if(APPLE)
                      -DEMBREE_ISA_SSE2=OFF
                      -DEMBREE_ISA_SSE42=OFF
         )
+    ELSEIF(CMAKE_OSX_ARCHITECTURES STREQUAL "arm64")
+        # With AppleClang we can select only 1 ISA.
+         set(ISA_ARGS -DEMBREE_ISA_AVX=OFF
+                     -DEMBREE_ISA_AVX2=OFF
+                     -DEMBREE_ISA_AVX512=OFF
+                     -DEMBREE_ISA_SSE2=OFF
+                     -DEMBREE_ISA_SSE42=OFF
+        )
     else()
         # With AppleClang we can select only 1 ISA.
         set(ISA_ARGS -DEMBREE_ISA_AVX=OFF
