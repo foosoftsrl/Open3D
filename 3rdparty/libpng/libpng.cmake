@@ -9,8 +9,8 @@ endif()
 ExternalProject_Add(
     ext_libpng
     PREFIX libpng
-    URL https://github.com/glennrp/libpng/archive/refs/tags/v1.6.37.tar.gz
-    URL_HASH SHA256=ca74a0dace179a8422187671aee97dd3892b53e168627145271cad5b5ac81307
+    URL https://github.com/glennrp/libpng/archive/refs/tags/v1.6.39.tar.gz
+    URL_HASH SHA256=a00e9d2f2f664186e4202db9299397f851aea71b36a35e74910b8820e380d441
     DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/libpng"
     UPDATE_COMMAND ""
     CMAKE_ARGS
